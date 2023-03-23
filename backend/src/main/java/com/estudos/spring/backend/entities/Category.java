@@ -1,19 +1,30 @@
 package com.estudos.spring.backend.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "tb_category")
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
-    private String name;
+    public Category() {
+    }
 
     public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+
 
     public Long getId() {
         return id;
