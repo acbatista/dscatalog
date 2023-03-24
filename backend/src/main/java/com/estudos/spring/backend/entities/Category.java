@@ -3,6 +3,7 @@ package com.estudos.spring.backend.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.Objects;
 
 
@@ -25,6 +26,9 @@ public class Category implements Serializable {
     private Long id;
     private String name;
 
+    private Instant created_At;
+
+
 
     public Long getId() {
         return id;
@@ -40,6 +44,14 @@ public class Category implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Instant getCreated_At() {
+        return created_At;
+    }
+
+    public void setCreated_At(Instant created_At) {
+        this.created_At = created_At;
     }
 
     @Override
